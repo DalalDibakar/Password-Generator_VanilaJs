@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <div class="input-container">
+            <input type="text" id="display-password" value="" readonly>
+            <i class="fa-solid fa-copy" style="cursor: pointer;" id="copy" onclick="copyText()"></i>
+            <i class="fa-solid fa-check" style="opacity: 0;" id="tick"></i>
+            <span id="text" style="opacity: 0;">Copied</span>
+        </div>
+        <div class="opertation-container">
+            <div class="slide-header">
+                <p>Password Length</p>
+                <div class="length-var">10</div>
+            </div>
+            <input type="range" name="length" id="p-length" min="1" max="20" step="1" value="10" oninput="controlSlider()">
+            <div>
+                <input type="checkbox" name="number" id="number" class="checkbox" checked>
+                <label for="number">Include Numbers</label>
+            </div>
+            <input type="checkbox" name="uppercase" id="uppercase" class="checkbox">
+            <label for="uppercase">Include Uppercase Letter</label>
+        </div>
+        <input type="checkbox" name="lowercase" id="lowercase" class="checkbox">
+        <label for="lowercase">Include Lowercase Letter</label>
+    </div>
+    <div>
+        <input type="checkbox" name="symbol" id="symbol" class="checkbox">
+        <label for="symbol">Include Symbols</label>
+
+    </div>
+    <div class="Strength-container" style="margin: 5px 0px; display: flex; align-items: center; gap: 15px;">
+        <p>Password Strength</p>
+        <div class="strength-indicator"
+            style="height: 20px;width: 20px; border-radius: 999px;border: 1px solid black;"></div>
+    </div>
+    <button id="generator" style="cursor: pointer;" onclick="generatePassword()">Generate Password</button>
+    </div>
+    </div>
+    <script src="https://kit.fontawesome.com/3631adecbb.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
